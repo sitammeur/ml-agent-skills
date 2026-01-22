@@ -60,7 +60,7 @@ This repository has the following skills:
 
 Once a skill is installed, mention it directly while giving your coding agent instructions:
 
-- "Use the Bright Data web skill to scrape this website 'https://www.google.com' and save the results to a file."
+- "Use the Bright Data web skill to scrape this website 'https://example.com/'."
 - "Use the HF LLM trainer skill to estimate the GPU memory needed for a 70B model run."
 - "Use the HF model evaluation skill to launch `run_eval_job.py` on the latest checkpoint."
 - "Use the HF dataset creator skill to draft new few-shot classification templates."
