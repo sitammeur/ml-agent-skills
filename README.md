@@ -1,12 +1,12 @@
-# Hugging Face Skills
+# Hugging Face Skills (with Brightdata support)
 
-Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like OpenAI Codex, Anthropic's Claude Code, Google DeepMind's Gemini CLI, and Cursor.
+Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like OpenAI Codex, Anthropic's Claude Code, Google DeepMind's Gemini CLI, and Cursor. This repository includes a new skill for Brightdata to interact with the web and perform various tasks.
 
 The Skills in this repository follow the standardized format [Agent Skill](https://agentskills.io/home) format.
 
 ## How do Skills work?
 
-In practice, skills are self-contained folders that package instructions, scripts, and resources together for an AI agent to use on a specific use case. Each folder includes a `SKILL.md` file with YAML frontmatter (name and description) followed by the guidance your coding agent follows while the skill is active. 
+In practice, skills are self-contained folders that package instructions, scripts, and resources together for an AI agent to use on a specific use case. Each folder includes a `SKILL.md` file with YAML frontmatter (name and description) followed by the guidance your coding agent follows while the skill is active.
 
 > [!NOTE]
 > 'Skills' is actually an Anthropic term used within Claude AI and Claude Code and not adopted by other agent tools, but we love it! OpenAI Codex uses an `AGENTS.md` file to define the instructions for your coding agent. Google Gemini uses 'extensions' to define the instructions for your coding agent in a `gemini-extension.json` file. **This repo is compatible with all of them, and more!**
@@ -18,53 +18,24 @@ In practice, skills are self-contained folders that package instructions, script
 
 Hugging Face skills are compatible with Claude Code, Codex, and Gemini CLI. With integrations Cursor, Windsurf, and Continue, on the way.
 
-### Claude Code
+1. Clone the repository and navigate to the project directory.
 
-1. Register the repository as a plugin marketplace:  
-   
-```
-/plugin marketplace add huggingface/skills
-```
+2. Run Claude Code (provided you have the Claude Code installed):
 
-2. To install a skill, run:  
-   
-```
-/plugin install <skill-name>@huggingface/skills
+```bash
+claude
 ```
 
-For example:  
+3. Verify skills:
 
 ```
-/plugin install hugging-face-cli@huggingface/skills
+What are the available skills?
 ```
 
-### Codex
+Follow these blog posts for more information based on your coding agent:
 
-1. Codex will identify the skills via the `AGENTS.md` file. You can verify the instructions are loaded with:
-
-```
-codex --ask-for-approval never "Summarize the current instructions."
-```
-
-2. For more details, see the [Codex AGENTS guide](https://developers.openai.com/codex/guides/agents-md).
-
-### Gemini CLI
-
-1. This repo includes `gemini-extension.json` to integrate with the Gemini CLI.
-
-2. Install locally:  
-
-```
-gemini extensions install . --consent
-```
-
-or use the GitHub URL:
-
-```
-gemini extensions install https://github.com/huggingface/skills.git --consent
-```
-
-4. See [Gemini CLI extensions docs](https://geminicli.com/docs/extensions/#installing-an-extension) for more help.
+- [Claude Code](https://huggingface.co/blog/hf-skills-training)
+- [Codex](https://huggingface.co/blog/hf-skills-training-codex)
 
 ## Skills
 
@@ -76,7 +47,7 @@ This repository contains a few skills to get you started. You can also contribut
 <!-- BEGIN_SKILLS_TABLE -->
 | Name | Description | Documentation |
 |------|-------------|---------------|
-| `brightdata-web-mcp` | Search the web, scrape websites, and extract structured data using Bright Data's Web MCP. Handles anti-bot measures, CAPTCHAs, and dynamic content. Includes tools for Amazon, LinkedIn, Instagram, and 50+ platforms. | [SKILL.md](skills/brightdata-web-mcp/SKILL.md) |
+| `brightdata-web-mcp` | Use Brightdata Web MCP to interact with the web and perform various tasks. | [SKILL.md](skills/brightdata-web-mcp/SKILL.md) |
 | `hugging-face-cli` | Execute Hugging Face Hub operations using the hf CLI. Download models/datasets, upload files, manage repos, and run cloud compute jobs. | [SKILL.md](skills/hugging-face-cli/SKILL.md) |
 | `hugging-face-datasets` | Create and manage datasets on Hugging Face Hub. Supports initializing repos, defining configs/system prompts, streaming row updates, and SQL-based dataset querying/transformation. | [SKILL.md](skills/hugging-face-datasets/SKILL.md) |
 | `hugging-face-evaluation` | Add and manage evaluation results in Hugging Face model cards. Supports extracting eval tables from README content, importing scores from Artificial Analysis API, and running custom evaluations with vLLM/lighteval. | [SKILL.md](skills/hugging-face-evaluation/SKILL.md) |
@@ -102,6 +73,7 @@ Your coding agent automatically loads the corresponding `SKILL.md` instructions 
 
 1. Copy one of the existing skill folders (for example, `hf-datasets/`) and rename it.
 2. Update the new folder's `SKILL.md` frontmatter:
+
    ```markdown
    ---
    name: my-skill-name
@@ -109,8 +81,10 @@ Your coding agent automatically loads the corresponding `SKILL.md` instructions 
    ---
 
    # Skill Title
+
    Guidance + examples + guardrails
    ```
+
 3. Add or edit supporting scripts, templates, and documents referenced by your instructions.
 4. Add an entry to `.claude-plugin/marketplace.json` with a concise, human-readable description.
 5. Run `python scripts/generate_agents.py` to validate the structure.
@@ -121,5 +95,16 @@ Your coding agent automatically loads the corresponding `SKILL.md` instructions 
 The `.claude-plugin/marketplace.json` file lists skills with human-readable descriptions for the plugin marketplace. The CI validates that skill names and paths match between `SKILL.md` files and `marketplace.json`, but descriptions are maintained separately: `SKILL.md` descriptions guide when Claude activates the skill, while marketplace descriptions are written for humans browsing available skills.
 
 ### Additional references
+
 - Browse the latest instructions, scripts, and templates directly at [huggingface/skills](https://github.com/huggingface/skills).
 - Review Hugging Face documentation for the specific libraries or workflows you reference inside each skill.
+
+## 📬 Stay Updated with Our Newsletter!
+
+**Get a FREE Data Science eBook** 📖 with 150+ essential lessons in Data Science when you subscribe to our newsletter! Stay in the loop with the latest tutorials, insights, and exclusive resources. [Subscribe now!](https://join.dailydoseofds.com)
+
+[![Daily Dose of Data Science Newsletter](https://github.com/patchy631/ai-engineering/blob/main/resources/join_ddods.png)](https://join.dailydoseofds.com)
+
+## Contribution
+
+Contributions are welcome! Feel free to fork this repository and submit pull requests with your improvements.
