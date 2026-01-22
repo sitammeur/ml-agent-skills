@@ -1,6 +1,6 @@
 # Hugging Face Skills (with Brightdata support)
 
-Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like OpenAI Codex, Anthropic's Claude Code, Google DeepMind's Gemini CLI, and Cursor. This repository includes a new skill for Brightdata to interact with the web and perform various tasks.
+Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like Claude Code. This repository includes a new skill for Brightdata to interact with the web and perform various tasks.
 
 The Skills in this repository follow the standardized format [Agent Skill](https://agentskills.io/home) format.
 
@@ -8,34 +8,32 @@ The Skills in this repository follow the standardized format [Agent Skill](https
 
 In practice, skills are self-contained folders that package instructions, scripts, and resources together for an AI agent to use on a specific use case. Each folder includes a `SKILL.md` file with YAML frontmatter (name and description) followed by the guidance your coding agent follows while the skill is active.
 
-> [!NOTE]
-> 'Skills' is actually an Anthropic term used within Claude AI and Claude Code and not adopted by other agent tools, but we love it! OpenAI Codex uses an `AGENTS.md` file to define the instructions for your coding agent. Google Gemini uses 'extensions' to define the instructions for your coding agent in a `gemini-extension.json` file. **This repo is compatible with all of them, and more!**
-
-> [!TIP]
-> If your agent doesn't support skills, you can use [`agents/AGENTS.md`](agents/AGENTS.md) directly as a fallback.
-
 ## Installation
 
-Hugging Face skills are compatible with Claude Code, Codex, and Gemini CLI. With integrations Cursor, Windsurf, and Continue, on the way.
+Run the following commands to test it out yourself:
 
 1. Clone the repository and navigate to the project directory.
 
-2. Run Claude Code (provided you have the Claude Code installed):
+2. Install skills:
+```bash
+bash scripts/link-skills.sh
+```
+
+3. Run Claude Code:
 
 ```bash
 claude
 ```
 
-3. Verify skills:
+4. Verify skills:
 
-```
-What are the available skills?
+```bash
+/skills
 ```
 
-Follow these blog posts for more information based on your coding agent:
+Follow the following blog post for more information:
 
 - [Claude Code](https://huggingface.co/blog/hf-skills-training)
-- [Codex](https://huggingface.co/blog/hf-skills-training-codex)
 
 ## Skills
 
