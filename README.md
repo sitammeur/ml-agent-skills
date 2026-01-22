@@ -96,7 +96,7 @@ The `.claude-plugin/marketplace.json` file lists skills with human-readable desc
 
 - Browse the latest instructions, scripts, and templates directly at [huggingface/skills](https://github.com/huggingface/skills).
 - Review Hugging Face documentation for the specific libraries or workflows you reference inside each skill.
-- Review [Bright Data documentation](skills/brightdata-web-mcp/SKILL.md) for anything related to Bright Data.
+- Review [Bright Data documentation](https://docs.brightdata.com/) for anything related to Bright Data.
 
 ## 📬 Stay Updated with Our Newsletter!
 
