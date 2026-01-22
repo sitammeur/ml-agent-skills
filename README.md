@@ -1,6 +1,6 @@
 # Hugging Face Skills (with Brightdata support)
 
-This project is an extension of the [Hugging Face Skills](https://huggingface.co/blog/hf-skills-training) project. Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like Claude Code. This repository includes a new skill for Bright Data to interact with the web and perform various tasks.
+This project is an extension of the [Hugging Face Skills](https://github.com/huggingface/skills) project. Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like Claude Code. This repository includes a new skill for Bright Data to interact with the web and perform various tasks.
 
 The Skills in this repository follow the standardized format [Agent Skill](https://agentskills.io/home) format.
 
@@ -37,7 +37,7 @@ Follow the following blog post for more information:
 
 ## Skills
 
-This repository contains a few skills to get you started. You can also contribute your own skills to the repository.
+This repository has the following skills:
 
 ### Available skills
 
@@ -60,6 +60,7 @@ This repository contains a few skills to get you started. You can also contribut
 
 Once a skill is installed, mention it directly while giving your coding agent instructions:
 
+- "Use the Bright Data web skill to scrape this website 'https://www.google.com' and save the results to a file."
 - "Use the HF LLM trainer skill to estimate the GPU memory needed for a 70B model run."
 - "Use the HF model evaluation skill to launch `run_eval_job.py` on the latest checkpoint."
 - "Use the HF dataset creator skill to draft new few-shot classification templates."
