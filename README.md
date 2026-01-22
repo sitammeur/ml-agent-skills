@@ -1,6 +1,6 @@
 # Hugging Face Skills (with Brightdata support)
 
-Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like Claude Code. This repository includes a new skill for Brightdata to interact with the web and perform various tasks.
+This project is an extension of the [Hugging Face Skills](https://huggingface.co/blog/hf-skills-training) project. Hugging Face Skills are definitions for AI/ML tasks like dataset creation, model training, and evaluation. They are interoperable with all major coding agent tools like Claude Code. This repository includes a new skill for Bright Data to interact with the web and perform various tasks.
 
 The Skills in this repository follow the standardized format [Agent Skill](https://agentskills.io/home) format.
 
@@ -33,7 +33,7 @@ claude
 
 Follow the following blog post for more information:
 
-- [Claude Code](https://huggingface.co/blog/hf-skills-training)
+- [We Got Claude to Fine-Tune an Open Source LLM](https://huggingface.co/blog/hf-skills-training)
 
 ## Skills
 
@@ -45,7 +45,7 @@ This repository contains a few skills to get you started. You can also contribut
 <!-- BEGIN_SKILLS_TABLE -->
 | Name | Description | Documentation |
 |------|-------------|---------------|
-| `brightdata-web-mcp` | Use Brightdata Web MCP to interact with the web and perform various tasks. | [SKILL.md](skills/brightdata-web-mcp/SKILL.md) |
+| `brightdata-web-mcp` | Use Bright Data Web MCP to interact with the web and perform various tasks. | [SKILL.md](skills/brightdata-web-mcp/SKILL.md) |
 | `hugging-face-cli` | Execute Hugging Face Hub operations using the hf CLI. Download models/datasets, upload files, manage repos, and run cloud compute jobs. | [SKILL.md](skills/hugging-face-cli/SKILL.md) |
 | `hugging-face-datasets` | Create and manage datasets on Hugging Face Hub. Supports initializing repos, defining configs/system prompts, streaming row updates, and SQL-based dataset querying/transformation. | [SKILL.md](skills/hugging-face-datasets/SKILL.md) |
 | `hugging-face-evaluation` | Add and manage evaluation results in Hugging Face model cards. Supports extracting eval tables from README content, importing scores from Artificial Analysis API, and running custom evaluations with vLLM/lighteval. | [SKILL.md](skills/hugging-face-evaluation/SKILL.md) |
@@ -67,7 +67,7 @@ Once a skill is installed, mention it directly while giving your coding agent in
 
 Your coding agent automatically loads the corresponding `SKILL.md` instructions and helper scripts while it completes the task.
 
-### Contribute or customize a skill
+### Customize a skill
 
 1. Copy one of the existing skill folders (for example, `hf-datasets/`) and rename it.
 2. Update the new folder's `SKILL.md` frontmatter:
@@ -96,6 +96,7 @@ The `.claude-plugin/marketplace.json` file lists skills with human-readable desc
 
 - Browse the latest instructions, scripts, and templates directly at [huggingface/skills](https://github.com/huggingface/skills).
 - Review Hugging Face documentation for the specific libraries or workflows you reference inside each skill.
+- Review [Bright Data documentation](https://brightdata.com/docs) for anything related to Bright Data.
 
 ## 📬 Stay Updated with Our Newsletter!
 
